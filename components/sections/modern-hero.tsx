@@ -2,8 +2,6 @@
 
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Text, Sphere, Box, Torus } from "@react-three/drei";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/hooks/use-language";
@@ -18,56 +16,11 @@ import {
   Cpu,
   Database,
   Shield,
+  Brain,
+  Globe,
+  Target,
+  TrendingUp,
 } from "lucide-react";
-
-function AnimatedSphere({
-  position,
-  color,
-}: {
-  position: [number, number, number];
-  color: string;
-}) {
-  const meshRef = useRef<any>();
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
-      meshRef.current.position.y =
-        position[1] + Math.sin(state.clock.getElapsedTime()) * 0.1;
-    }
-  });
-
-  return (
-    <Sphere ref={meshRef} position={position} args={[0.5]} scale={1.5}>
-      <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
-    </Sphere>
-  );
-}
-
-function FloatingElement({
-  position,
-  children,
-}: {
-  position: [number, number, number];
-  children: React.ReactNode;
-}) {
-  const meshRef = useRef<any>();
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.position.y =
-        position[1] + Math.sin(state.clock.getElapsedTime() * 2) * 0.2;
-      meshRef.current.rotation.z = Math.sin(state.clock.getElapsedTime()) * 0.1;
-    }
-  });
-
-  return (
-    <group ref={meshRef} position={position}>
-      {children}
-    </group>
-  );
-}
 
 export function ModernHero() {
   const { translation, language, isRTL } = useLanguage();
