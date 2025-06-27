@@ -8,6 +8,10 @@ export interface Translation {
   analytics: string;
   signIn: string;
   getStarted: string;
+  aiAgent: string;
+  dashboard: string;
+  apiProvider: string;
+  admin: string;
 
   // Hero Section
   aiPoweredRevolution: string;
@@ -39,11 +43,53 @@ export interface Translation {
   getPremium: string;
   contactSales: string;
 
+  // Services
+  ourServices: string;
+  servicesDescription: string;
+  requestService: string;
+  serviceProcess: string;
+
+  // AI Agent
+  aiAgentTitle: string;
+  aiAgentDescription: string;
+  aiCapabilities: string;
+  agentTypes: string;
+
+  // Dashboard
+  welcomeBack: string;
+  dashboardSubtitle: string;
+  myProjects: string;
+  recentActivity: string;
+
+  // Payment
+  securePayment: string;
+  paymentDescription: string;
+  paymentMethods: string;
+
+  // API
+  apiProvider: string;
+  apiDescription: string;
+  apiEndpoints: string;
+  authentication: string;
+  documentation: string;
+
+  // Admin
+  servicesManagement: string;
+  addService: string;
+  editService: string;
+  usersManagement: string;
+  ordersManagement: string;
+
   // Common
   free: string;
   premium: string;
   enterprise: string;
   month: string;
+  save: string;
+  cancel: string;
+  edit: string;
+  delete: string;
+  view: string;
 
   // Currency
   currency: string;
@@ -60,6 +106,10 @@ export const translations: Record<Language, Translation> = {
     analytics: "Analytics",
     signIn: "Sign In",
     getStarted: "Get Started",
+    aiAgent: "AI Agent",
+    dashboard: "Dashboard",
+    apiProvider: "API Provider",
+    admin: "Admin",
 
     // Hero Section
     aiPoweredRevolution: "AI-Powered Marketing Revolution",
@@ -93,11 +143,56 @@ export const translations: Record<Language, Translation> = {
     getPremium: "Get Premium",
     contactSales: "Contact Sales",
 
+    // Services
+    ourServices: "Our Services",
+    servicesDescription:
+      "Comprehensive digital marketing solutions powered by AI",
+    requestService: "Request Service",
+    serviceProcess: "Our Process",
+
+    // AI Agent
+    aiAgentTitle: "AI Marketing Agents",
+    aiAgentDescription:
+      "Intelligent AI agents that work 24/7 to optimize your marketing campaigns",
+    aiCapabilities: "AI Capabilities",
+    agentTypes: "Agent Types",
+
+    // Dashboard
+    welcomeBack: "Welcome Back",
+    dashboardSubtitle: "Manage your campaigns and track performance",
+    myProjects: "My Projects",
+    recentActivity: "Recent Activity",
+
+    // Payment
+    securePayment: "Secure Payment",
+    paymentDescription: "Complete your purchase with our secure payment system",
+    paymentMethods: "Payment Methods",
+
+    // API
+    apiProvider: "API Provider",
+    apiDescription:
+      "Integrate our powerful AI marketing tools into your applications",
+    apiEndpoints: "API Endpoints",
+    authentication: "Authentication",
+    documentation: "Documentation",
+
+    // Admin
+    servicesManagement: "Services Management",
+    addService: "Add Service",
+    editService: "Edit Service",
+    usersManagement: "Users Management",
+    ordersManagement: "Orders Management",
+
     // Common
     free: "Free",
     premium: "Premium",
     enterprise: "Enterprise",
     month: "/month",
+    save: "Save",
+    cancel: "Cancel",
+    edit: "Edit",
+    delete: "Delete",
+    view: "View",
 
     // Currency
     currency: "Currency",
