@@ -16,9 +16,10 @@ export function Navigation() {
 
   const navItems = [
     { href: "#features", label: translation.features },
-    { href: "#services", label: translation.services },
+    { href: "/services", label: translation.services },
+    { href: "/ai-agent", label: translation.aiAgent },
     { href: "#pricing", label: translation.pricing },
-    { href: "#analytics", label: translation.analytics },
+    { href: "/api-provider", label: translation.apiProvider },
   ];
 
   return (
@@ -58,8 +59,19 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-2">
             <LanguageSwitcher />
             <CurrencySwitcher />
-            <Button variant="ghost" className="text-white hover:bg-white/10">
-              {translation.signIn}
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/10"
+              asChild
+            >
+              <a href="/dashboard">{translation.dashboard}</a>
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/10"
+              asChild
+            >
+              <a href="/admin">{translation.admin}</a>
             </Button>
             <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
               {translation.getStarted}
