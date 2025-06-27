@@ -33,8 +33,8 @@ export function ModernHero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const features = [
     {
@@ -43,6 +43,7 @@ export function ModernHero() {
       titleAr: "مدعوم بالذكاء الاصطناعي",
       description: "Advanced AI algorithms",
       descriptionAr: "خوارزميات ذكاء اصطناعي متطورة",
+      color: "from-purple-500 to-violet-600",
     },
     {
       icon: Zap,
@@ -50,6 +51,7 @@ export function ModernHero() {
       titleAr: "سريع البرق",
       description: "Instant processing",
       descriptionAr: "معالجة فورية",
+      color: "from-yellow-500 to-orange-600",
     },
     {
       icon: Shield,
@@ -57,6 +59,7 @@ export function ModernHero() {
       titleAr: "أمان المؤسسات",
       description: "Bank-level encryption",
       descriptionAr: "تشفير مستوى البنوك",
+      color: "from-green-500 to-emerald-600",
     },
     {
       icon: Database,
@@ -64,7 +67,25 @@ export function ModernHero() {
       titleAr: "تحليلات فورية",
       description: "Live data insights",
       descriptionAr: "رؤى البيانات المباشرة",
+      color: "from-blue-500 to-cyan-600",
     },
+  ];
+
+  const stats = [
+    {
+      value: "250K+",
+      label: "Active Users",
+      labelAr: "مستخدم نشط",
+      icon: Target,
+    },
+    {
+      value: "500%",
+      label: "ROI Average",
+      labelAr: "متوسط العائد",
+      icon: TrendingUp,
+    },
+    { value: "99.9%", label: "Uptime", labelAr: "وقت التشغيل", icon: Shield },
+    { value: "24/7", label: "AI Support", labelAr: "دعم ذكي", icon: Bot },
   ];
 
   return (
@@ -73,41 +94,62 @@ export function ModernHero() {
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{ y, opacity }}
     >
-      {/* 3D Background Elements */}
+      {/* Modern CSS Background Effects */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 8], fov: 75 }}>
-          <ambientLight intensity={0.6} />
-          <pointLight position={[10, 10, 10]} intensity={1} />
-          <pointLight
-            position={[-10, -10, -10]}
-            intensity={0.5}
-            color="#8B5CF6"
+        {/* Floating Orbs */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full blur-xl opacity-20"
+            style={{
+              width: `${100 + i * 50}px`,
+              height: `${100 + i * 50}px`,
+              background: `radial-gradient(circle, ${
+                [
+                  "#8B5CF6",
+                  "#06B6D4",
+                  "#10B981",
+                  "#F59E0B",
+                  "#EF4444",
+                  "#EC4899",
+                ][i]
+              }, transparent)`,
+              left: `${15 + i * 15}%`,
+              top: `${10 + i * 12}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, 20, 0],
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
           />
+        ))}
 
-          <AnimatedSphere position={[-3, 2, -2]} color="#8B5CF6" />
-          <AnimatedSphere position={[3, -1, -1]} color="#06B6D4" />
-          <AnimatedSphere position={[0, 3, -3]} color="#10B981" />
-
-          <FloatingElement position={[-4, -2, 0]}>
-            <Box args={[0.5, 0.5, 0.5]}>
-              <meshStandardMaterial
-                color="#F59E0B"
-                roughness={0.1}
-                metalness={0.9}
+        {/* Geometric Grid */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="grid grid-cols-12 grid-rows-12 w-full h-full">
+            {[...Array(144)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="border border-white/20"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 0.3, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.01,
+                }}
               />
-            </Box>
-          </FloatingElement>
-
-          <FloatingElement position={[4, 1, -1]}>
-            <Torus args={[0.3, 0.1, 16, 100]}>
-              <meshStandardMaterial
-                color="#EF4444"
-                roughness={0.1}
-                metalness={0.8}
-              />
-            </Torus>
-          </FloatingElement>
-        </Canvas>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
