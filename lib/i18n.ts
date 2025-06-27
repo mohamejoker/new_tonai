@@ -207,6 +207,10 @@ export const translations: Record<Language, Translation> = {
     analytics: "التحليلات",
     signIn: "تسجيل الدخول",
     getStarted: "ابدأ الآن",
+    aiAgent: "الوكيل الذكي",
+    dashboard: "لوحة التحكم",
+    apiProvider: "مزود API",
+    admin: "الإدارة",
 
     // Hero Section
     aiPoweredRevolution: "ثورة التسويق بالذكاء الاصطناعي",
@@ -238,13 +242,56 @@ export const translations: Record<Language, Translation> = {
     mostPopular: "الأكثر شعبية",
     startFree: "ابدأ مجاناً",
     getPremium: "احصل على المميز",
-    contactSales: "اتصل بالمبيعات",
+    contactSales: "اتص�� بالمبيعات",
+
+    // Services
+    ourServices: "خدماتنا",
+    servicesDescription: "حلول التسويق الرقمي الشاملة مدعومة بالذكاء الاصطناعي",
+    requestService: "اطلب الخدمة",
+    serviceProcess: "عمليتنا",
+
+    // AI Agent
+    aiAgentTitle: "وكلاء التسويق الذكي",
+    aiAgentDescription:
+      "وكلاء ذكاء اصطناعي ذكيون يعملون 24/7 لتحسين حملاتك التسويقية",
+    aiCapabilities: "قدرات الذكاء الاصطناعي",
+    agentTypes: "أنواع الوكلاء",
+
+    // Dashboard
+    welcomeBack: "مرحباً بعودتك",
+    dashboardSubtitle: "أدر حملاتك وتتبع الأداء",
+    myProjects: "مشاريعي",
+    recentActivity: "النشاط الأخير",
+
+    // Payment
+    securePayment: "دفع آمن",
+    paymentDescription: "أكمل عملية الشراء بنظام الدفع الآمن لدينا",
+    paymentMethods: "طرق الدفع",
+
+    // API
+    apiProvider: "مزود API",
+    apiDescription: "دمج أدوات التسويق القوية بالذكاء الاصطناعي في تطبيقاتك",
+    apiEndpoints: "نقاط نهاية API",
+    authentication: "المصادقة",
+    documentation: "التوثيق",
+
+    // Admin
+    servicesManagement: "إدارة الخدمات",
+    addService: "إضافة خدمة",
+    editService: "تعديل الخدمة",
+    usersManagement: "إدارة المستخدمين",
+    ordersManagement: "إدارة الطلبات",
 
     // Common
     free: "مجاني",
     premium: "مميز",
     enterprise: "للمؤسسات",
     month: "/شهر",
+    save: "حفظ",
+    cancel: "إلغاء",
+    edit: "تعديل",
+    delete: "حذف",
+    view: "عرض",
 
     // Currency
     currency: "العملة",
